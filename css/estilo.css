@@ -56,4 +56,18 @@ footer h5:hover, footer h6:hover {
   transform: translateY(30px);
 }
 
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+h1, h5, h6 {
+  animation-name: aparecer;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
 /*# sourceMappingURL=estilo.css.map */
