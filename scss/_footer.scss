@@ -1,0 +1,15 @@
+footer{
+    h5,h6{
+        font:{
+            size: 15px;
+            family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            weight:normal ;
+        }
+        transition: 1s all;
+            &:hover{
+                background-color: rgb(189, 224, 182);
+                border-radius: 20px;
+                color: black;
+            }
+    }
+}

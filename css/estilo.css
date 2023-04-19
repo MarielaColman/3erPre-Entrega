@@ -1,3 +1,59 @@
+header nav {
+  padding: 20px;
+  margin: 20px;
+}
+header nav a {
+  margin: 15px;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: normal;
+  transition: 0.5s all;
+}
+header nav a:hover {
+  background-color: rgb(158, 170, 155);
+  border-radius: 15px;
+  color: black;
+}
 
+.mp {
+  margin: 15px;
+  padding: 15px;
+}
+
+footer h5, footer h6 {
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: normal;
+  transition: 1s all;
+}
+footer h5:hover, footer h6:hover {
+  background-color: rgb(189, 224, 182);
+  border-radius: 20px;
+  color: black;
+}
+
+.gradienteHeader {
+  background-image: linear-gradient(to bottom, grey, transparent);
+}
+
+.gradienteFooter {
+  background-image: linear-gradient(to top, grey, transparent);
+}
+
+.logoFooter {
+  transition: all 1s;
+}
+
+.logoFooter:hover {
+  transform: translateY(-30px);
+}
+
+.logoHeader {
+  transition: all 1s;
+}
+
+.logoHeader:hover {
+  transform: translateY(30px);
+}
 
 /*# sourceMappingURL=estilo.css.map */
