@@ -1,0 +1,9 @@
+@mixin flex-row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+main,h1{
+    @include flex-row-center;
+ }
