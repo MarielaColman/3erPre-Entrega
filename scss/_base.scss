@@ -1,5 +1,6 @@
 
 body{
+background-color:rgb(0, 0, 0);
 font-family: 'Arsenal', sans-serif;
 }
 article{font:{
@@ -7,10 +8,16 @@ article{font:{
 }
 }
 .bgSecundario{
-    background-color:#86895d;
+    background-color:#d3e9d0;
 }
 .bgPrincipal{
     background-color: #dbdbce;
 }
+.bgNosotros{
+    background-color: #80b85b;
+}
 
 .textcolor{color: #30330a;}
+
+a,p,h1,h2,h3,h5{color:whitesmoke;}
+.card-text{color:#5b8351}
