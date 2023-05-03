@@ -4,6 +4,6 @@
     justify-content: center;
 }
 
-main,h1,article,h5{
+main,h1,article,h5,.formContacto{
     @include flex-row-center;
  }

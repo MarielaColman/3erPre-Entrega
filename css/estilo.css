@@ -21,14 +21,14 @@ header nav a:hover {
 }
 
 footer h5 {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: normal;
 }
 
 .logoredes {
-  width: 60px;
-  height: 40px;
+  width: 45px;
+  height: 20px;
   transition: 1s all;
   display: inline-flex;
   flex-direction: row;
@@ -92,7 +92,7 @@ article {
 }
 
 .bgSecundario {
-  background-color: #d3e9d0;
+  background-color: #9bbe93;
 }
 
 .bgPrincipal {
@@ -115,7 +115,12 @@ a, p, h1, h2, h3, h5 {
   color: #5b8351;
 }
 
-main, h1, article, h5 {
+.mp1 {
+  margin: 30px;
+  padding: 15px;
+}
+
+main, h1, article, h5, .formContacto {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -125,12 +130,6 @@ main, h1, article, h5 {
   video {
     width: 800px;
     height: 500px;
-  }
-}
-@media (min-width: 769px) and (max-width: 1023px) {
-  video {
-    width: 90px;
-    height: 100px;
   }
 }
 .card {
