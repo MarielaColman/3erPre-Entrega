@@ -1,4 +1,4 @@
-class Cliente {
+/*class Cliente {
     constructor(nombre, fechaNacimiento, sexo) {
       this.nombre = nombre;
       this.fechaNacimiento = fechaNacimiento;
@@ -119,6 +119,96 @@ class Cliente {
         } while (opcion !== "99");
       }
       
-      administrarClientes();
+      administrarClientes();*/
 
-    
+let titulo = document.getElementsByTagName("h1")[0];
+titulo.innerText = "Clientes"
+
+let listado = prompt("Ingrese su nombre");
+let contenido = document.getElementById("contenido");
+contenido.className="contenido";
+
+if (listado != "" && listado != null){
+  let clientes = listado.split(",");
+  let ul = document.createElement("ul");
+  let clientesImportantes = [];
+  let clientesNormales = [];
+  clientes.forEach(cliente => {
+    let importante = cliente.includes("!");
+    if (importante) {
+      cliente = cliente.replace("!", "")
+      clientesImportantes.push(cliente);
+    } else {
+      clientesNormales.push(cliente);
+    }
+  });
+
+  if (clientesImportantes.length > 0) {
+    let ulImportantes = document.createElement("ul");
+    clientesImportantes.forEach(cliente => {
+      let li = document.createElement("li");
+      li.className = "importante"
+      li.textContent = cliente.trim();
+      ulImportantes.appendChild(li);
+    });
+    contenido.appendChild(ulImportantes);
+  }
+
+  if (clientesNormales.length > 0) {
+    let ulNormales = document.createElement("ul");
+    clientesNormales.forEach(cliente => {
+      let li = document.createElement("li");
+      li.textContent = cliente.trim();
+      ulNormales.appendChild(li);
+    });
+    contenido.appendChild(ulNormales);
+    let data = {
+      clientes: clientes,
+      clientesImportantes: clientesImportantes,
+      clientesNormales: clientesNormales
+    };
+    sessionStorage.setItem("clientesData", JSON.stringify(data));
+  } else {
+    contenido.innerHTML = "No hay clientes registrados";
+  }
+} else {
+  contenido.innerHTML = "No hay clientes registrados";
+}
+let resumen = document.getElementsByClassName("resumen");
+
+if (clientes.length > 0) {
+  resumen[0].innerHTML = `Tiene ${clientes.length} clientes, ${clientesImportantes.length} importantes y ${clientesNormales.length} normales`;
+} else {
+  contenido.innerHTML = "No hay clientes registrados";
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+let data = sessionStorage.getItem("clientesData");
+if (data) {
+  data = JSON.parse(data);
+  let { clientes, clientesImportantes, clientesNormales } = data;
+
+  if (clientesImportantes.length > 0) {
+    let ulImportantes = document.createElement("ul");
+    clientesImportantes.forEach(cliente => {
+      let li = document.createElement("li");
+      li.className = "importante";
+      li.textContent = cliente.trim();
+      ulImportantes.appendChild(li);
+    });
+    contenido.appendChild(ulImportantes);
+  }
+
+  if (clientesNormales.length > 0) {
+    let ulNormales = document.createElement("ul");
+    clientesNormales.forEach(cliente => {
+      let li = document.createElement("li");
+      li.textContent = cliente.trim();
+      ulNormales.appendChild(li);
+    });
+    contenido.appendChild(ulNormales);
+  }
+  let resumen = document.getElementsByClassName("resumen");
+  resumen[0].innerHTML = `Tiene ${clientes.length} clientes, ${clientesImportantes.length} importantes y ${clientesNormales.length} normales`;
+}
+});
